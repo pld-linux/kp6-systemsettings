@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.0.5
+%define		kdeplasmaver	6.1.0
 %define		qtver		5.15.2
 %define		kpname		systemsettings
 Summary:	KDE system settings
 Name:		kp6-%{kpname}
-Version:	6.0.5
+Version:	6.1.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	f56788b6b76f847df6463f4d5aaa4c49
+# Source0-md5:	2385418ee88e9ad63825fa21aaf616ea
 URL:		https://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	cmake >= 3.16.0
@@ -38,6 +38,7 @@ BuildRequires:	qt6-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
+Obsoletes:	kp5-%{kpname} < %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -48,6 +49,7 @@ Summary:	Header files for %{kpname} development
 Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kpname}
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Obsoletes:	kp5-%{kpname}-devel < %{version}
 
 %description devel
 Header files for %{kpname} development.
@@ -90,7 +92,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/systemsettings
 %{_datadir}/metainfo/org.kde.systemsettings.metainfo.xml
 %{_datadir}/kglobalaccel/systemsettings.desktop
-%attr(755,root,root) %{_libdir}/libsystemsettingsview.so.3
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/krunner/krunner_systemsettings.so
 %attr(755,root,root) %{_bindir}/systemsettings
 %{zsh_compdir}/_systemsettings
