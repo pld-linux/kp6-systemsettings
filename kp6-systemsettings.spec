@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.4.2
+%define		kdeplasmaver	6.4.3
 %define		qtver		5.15.2
 %define		kpname		systemsettings
 Summary:	KDE system settings
 Name:		kp6-%{kpname}
-Version:	6.4.2
-Release:	2
+Version:	6.4.3
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	653ed9d856c749e2156e3fee418e0776
+# Source0-md5:	47b99969002dd84cbd3094b070a1f925
 URL:		https://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	cmake >= 3.16.0
