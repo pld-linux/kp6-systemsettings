@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.4.5
+%define		kdeplasmaver	6.5.0
 %define		qtver		5.15.2
 %define		kpname		systemsettings
 Summary:	KDE system settings
 Name:		kp6-%{kpname}
-Version:	6.4.5
-Release:	3
+Version:	6.5.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	d7a2055135bd351d144a20ea66b54caf
+# Source0-md5:	35fdf18f073cba83f024a2f36a51cbd7
 URL:		https://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	cmake >= 3.16.0
@@ -102,7 +102,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/systemsettings
 %{_datadir}/metainfo/org.kde.systemsettings.metainfo.xml
 %{_datadir}/kglobalaccel/systemsettings.desktop
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/krunner/krunner_systemsettings.so
+%{_libdir}/qt6/plugins/kf6/krunner/krunner_systemsettings.so
 %attr(755,root,root) %{_bindir}/systemsettings
 %{zsh_compdir}/_systemsettings
 %{_datadir}/qlogging-categories6/systemsettings.categories
